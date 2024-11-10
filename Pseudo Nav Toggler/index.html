@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Navbar Toggler | CSS Pseudo Selectors</title>
+    <style>
+        body {
+            background-color: #cef7b3;
+            font-family: helvetica;
+            margin: 0;
+        }
+
+        .menu {
+            background-color: rgb(224, 245, 192);
+            margin-top: -210px;
+            transition: 0.5s;
+        }
+
+        .menu:target {
+            margin-top: 0;
+        }
+
+        .menu-title {
+            margin: 0;
+            color: rgb(2, 82, 2);
+            padding: 10px;
+        }
+
+        .menu-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: rgb(2, 82, 2);
+            /* background-color: rgb(198, 244, 183); */
+            padding: 5px 10px;
+            display: block;
+            border-bottom: 1px solid rgb(186, 247, 96);
+        }
+
+        li:first-child {
+            border-top: 1px solid rgb(186, 247, 96);
+
+        }
+
+        li {
+            /* border: 1px solid rgb(186, 247, 96); */
+        }
+
+        a:hover {
+            color: olivedrab;
+            background-color: rgb(149, 180, 87);
+        }
+
+        a::before {
+            content: "✅";
+            padding-right: 4px;
+
+        }
+
+        /* a::after {
+            content: "-";
+
+        } */
+        .not-available::before {
+            content: "❎";
+        }
+
+        .toggler {
+            background-color: rgb(182, 201, 152);
+            width: 60px;
+            text-align: center;
+            height: 60px;
+            padding: 0;
+            line-height: 60px;
+            border-radius: 30px;
+            margin-left: 25px;
+        }
+
+        .toggler::before {
+            content: none;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="menu" id="navbar">
+        <h2 class="menu-title">Our cuisine</h2>
+        <ul class="menu-list">
+            <li><a href="#">Salad</a></li>
+            <li><a href="#">Soup</a></li>
+            <li><a href="#">Pizza</a></li>
+            <li><a class="not-available" href="#">Kebab</a></li>
+            <li><a href="#">Burger</a></li>
+        </ul>
+        <a class="toggler" href="#navbar">MENU</a>
+    </nav>
+
+</body>
+
+</html>
